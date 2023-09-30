@@ -1,0 +1,61 @@
+.container-fluid {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-weight: 800;
+  color: royalblue;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+html {
+  min-height: 100%;/* fill the screen height to allow vertical alignement */
+}
+h1 {
+  text-shadow: darkred;
+  font-weight: bold;
+  text-decoration: royalblue;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.spoiler_content {
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.read-more-state {
+  display: none;
+}
+
+.text_hide {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.read-more-state:checked~.spoiler_content .text_hide {
+  opacity: 1;
+  font-size: inherit;
+  max-height: 999em;
+}
+
+.read-more-state:checked~.spoiler_content p {
+  margin-bottom: 20px;
+}
+
+.read-more-state~.read-more-trigger:before {
+  content: 'Показать статистику';
+}
+
+.read-more-state:checked~.read-more-trigger:before {
+  content: 'Скрыть статистику';
+}
+.read-more-trigger {
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: .9em;
+  line-height: 2;
+  border: none;
+  border-radius: .25em;
+  margin-bottom: 150px;
+  background: #43a80d;
+}
